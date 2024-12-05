@@ -25,7 +25,10 @@ void ExibeMenu()
     Console.Write("\nDigite a sua opção: ");
     int opcao = int.Parse(Console.ReadLine())!;
 
-    
+    if (opcao == 1)
+    {
+        Console.WriteLine("Você digitou a opção " + opcao);
+    }
 }
 
 MostraMensagem();
