@@ -75,6 +75,11 @@ do
 {
     Console.Write("Digite o número que escolheu: ");
     int escolha = int.Parse(Console.ReadLine());
+
+    if(VerificaNum(escolha) < 0 || VerificaNum(escolha) > 100)
+    {
+        continue;
+    }
     
     if (VerificaNum(escolha) < valorMaquina)
     {
