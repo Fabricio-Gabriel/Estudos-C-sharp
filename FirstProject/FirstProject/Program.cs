@@ -28,6 +28,12 @@ void ExibeMenu()
     if (opcao == 1)
     {
         Console.WriteLine("Você digitou a opção " + opcao);
+    } else if (opcao == 2)
+    {
+        Console.WriteLine("Você digitou a opção " + opcao);
+    } else if (opcao == 3)
+    {
+
     }
 }
 
