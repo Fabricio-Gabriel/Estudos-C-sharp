@@ -1,4 +1,6 @@
 ﻿string msgBoasVindas = "Boas vindas ao Screen Sound";
+List<string> listaDasBandas = new List<string>();
+
 void ExibeLogo()
 {
     Console.WriteLine(@"
@@ -12,6 +14,46 @@ void ExibeLogo()
 ");
     Console.WriteLine(msgBoasVindas + "\n");
 
+}
+
+void RegistrarBandas()
+{
+    Console.Clear();
+    Console.WriteLine("***********************");
+    Console.WriteLine("Registro de Bandas");
+    Console.WriteLine("***********************\n");
+    Console.Write("Digite o nome da banda que deseja registar: ");
+    string nomeBanda = Console.ReadLine()!;
+    listaDasBandas.Add(nomeBanda);
+    Console.WriteLine($"A banda {nomeBanda} foi registrada!");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibeLogo();
+    ExibeMenu();
+}
+
+void MostraBandas()
+{
+    Console.Clear();
+    Console.WriteLine("*****************************");
+    Console.WriteLine("Exibindo bandas registradas");
+    Console.WriteLine("*****************************");
+    Console.WriteLine("As bandas digitadas foram respectivamente: \n");
+
+    for(int i = 0; i < listaDasBandas.Count; i++)
+    {
+        Console.WriteLine($"Banda n{i+1}: {listaDasBandas[i]}");
+    }
+
+    Thread.Sleep(5000);
+
+    Console.WriteLine("Digite qualquer tecla para voltar ao menu!");
+    Console.ReadKey();
+
+    Console.Clear();
+
+    ExibeLogo();
+    ExibeMenu();
 }
 
 void ExibeMenu()
@@ -31,7 +73,7 @@ void ExibeMenu()
             RegistrarBandas();
             break;
         case 2:
-            Console.WriteLine("Você escolheu a opção " + opcao);
+            MostraBandas();
             break;
         case 3:
             Console.WriteLine("Você escolheu a opção " + opcao);
@@ -48,18 +90,6 @@ void ExibeMenu()
     }
 }
 
-void RegistrarBandas()
-{
-    Console.Clear();
-    Console.WriteLine("Registro de Bandas\n");
-    Console.Write("Digite o nome da banda que deseja registar: ");
-    string nomeBanda = Console.ReadLine()!;
-    Console.WriteLine($"A banda {nomeBanda} foi registrada!");
-    Thread.Sleep(2000);
-    Console.Clear();
-    ExibeLogo();
-    ExibeMenu();
-}
 
 ExibeLogo();
 ExibeMenu();
