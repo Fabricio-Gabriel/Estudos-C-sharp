@@ -1,5 +1,5 @@
 ﻿string msgBoasVindas = "Boas vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string>();
+List<string> listaDasBandas = new List<string> { "U2", "The Beatles", "Calypso" };
 
 void ExibeLogo()
 {
@@ -13,15 +13,21 @@ void ExibeLogo()
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░
 ");
     Console.WriteLine(msgBoasVindas + "\n");
+}
 
+void ExibirTituloDaOpcao(string titulo)
+{
+    int tamanho = titulo.Length;
+    string asteriscos = "".PadLeft(tamanho, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asteriscos + "\n");
 }
 
 void RegistrarBandas()
 {
     Console.Clear();
-    Console.WriteLine("***********************");
-    Console.WriteLine("Registro de Bandas");
-    Console.WriteLine("***********************\n");
+    ExibirTituloDaOpcao("Registro de Bandas");
     Console.Write("Digite o nome da banda que deseja registar: ");
     string nomeBanda = Console.ReadLine()!;
     listaDasBandas.Add(nomeBanda);
@@ -35,18 +41,22 @@ void RegistrarBandas()
 void MostraBandas()
 {
     Console.Clear();
-    Console.WriteLine("*****************************");
-    Console.WriteLine("Exibindo bandas registradas");
-    Console.WriteLine("*****************************");
+    ExibirTituloDaOpcao("Exibindo bandas registradas");
     Console.WriteLine("As bandas digitadas foram respectivamente: \n");
 
-    for(int i = 0; i < listaDasBandas.Count; i++)
+    //for (int i = 0; i < listaDasBandas.Count; i++)
+    //{
+    //    Console.WriteLine($"Banda n{i + 1}: {listaDasBandas[i]}");
+    //}
+
+    foreach(string banda in listaDasBandas)
     {
-        Console.WriteLine($"Banda n{i+1}: {listaDasBandas[i]}");
+        Console.WriteLine($"Banda: {banda}");
     }
 
-    Thread.Sleep(5000);
 
+    Thread.Sleep(5000);
+    Console.WriteLine();
     Console.WriteLine("Digite qualquer tecla para voltar ao menu!");
     Console.ReadKey();
 
