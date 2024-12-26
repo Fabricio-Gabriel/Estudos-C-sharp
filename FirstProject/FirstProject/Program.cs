@@ -70,6 +70,34 @@ void MostraBandas()
     ExibeMenu();
 }
 
+void AvaliaBanda()
+{
+    Console.Clear();
+    ExibirTituloDaOpcao("Avaliar banda");
+    Console.Write("Digite a banda que quer avaliar: ");
+    string nomeBanda = Console.ReadLine()!;
+
+    if (bandasRegistradas.ContainsKey(nomeBanda))
+    {
+        Console.Write($"Qual a nota que a banda {nomeBanda} merece: ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeBanda].Add(nota);
+        Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeBanda}\n");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibeLogo();
+        ExibeMenu();
+    } else
+    {
+        Console.WriteLine($"\nA banda {nomeBanda} não foi encontrada.\n");
+        Console.WriteLine("Digite qualquer tecla para voltar ao menu principal.");
+        Console.ReadKey();
+        Console.Clear();
+        ExibeLogo();
+        ExibeMenu();
+    }
+}
+
 void ExibeMenu()
 {
     Console.WriteLine("Digite 1 registrar uma banda");
@@ -90,7 +118,7 @@ void ExibeMenu()
             MostraBandas();
             break;
         case 3:
-            Console.WriteLine("Você escolheu a opção " + opcao);
+            AvaliaBanda();
             break;
         case 4:
             Console.WriteLine("Você escolheu a opção " + opcao);
