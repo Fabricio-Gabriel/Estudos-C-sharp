@@ -187,25 +187,52 @@
 //} while (true);
 
 
-Dictionary<string, List<double>> notasAluno = new Dictionary<string, List<double>>();
+//Dictionary<string, List<double>> notasAluno = new Dictionary<string, List<double>>();
 
-Console.Write("Digite o nome do aluno: ");
-string nomeAluno = Console.ReadLine()!;
-notasAluno.Add(nomeAluno, new List<double>());
+//Console.Write("Digite o nome do aluno: ");
+//string nomeAluno = Console.ReadLine()!;
+//notasAluno.Add(nomeAluno, new List<double>());
 
-for(int i = 1; i <= 4; i++)
+//for(int i = 1; i <= 4; i++)
+//{
+//    Console.Write($"Digite a {i}a nota: ");
+//    double nota = double.Parse(Console.ReadLine()!);
+//    notasAluno[nomeAluno].Add(nota);
+//}
+
+//double s = 0;
+//foreach(double nota in notasAluno[nomeAluno])
+//{
+//    s += nota;
+//}
+
+//Thread.Sleep(2000);
+//double media = s / notasAluno[nomeAluno].Count;
+//Console.WriteLine($"A média do aluno {nomeAluno} foi de {media}");
+
+Dictionary<string, List<int>> vendasCarros = new Dictionary<string, List<int>> {
+    { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
+    { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
+    { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
+    { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
+    { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
+};
+
+Console.Write("Digite o carro que deseja ver a média de vendas: ");
+string carro = Console.ReadLine();
+
+if(vendasCarros.ContainsKey(carro))
 {
-    Console.Write($"Digite a {i}a nota: ");
-    double nota = double.Parse(Console.ReadLine()!);
-    notasAluno[nomeAluno].Add(nota);
-}
+    int soma = 0;
 
-double s = 0;
-foreach(double nota in notasAluno[nomeAluno])
+    foreach(int venda in vendasCarros[carro])
+    {
+        soma += venda;
+    }
+
+    int media = soma / vendasCarros[carro].Count;
+    Console.WriteLine($"O carro {carro} teve uma média de vendas de {media} carros");
+} else
 {
-    s += nota;
+    Console.WriteLine("O carro não foi encontrado no sistema!");
 }
-
-Thread.Sleep(2000);
-double media = s / notasAluno[nomeAluno].Count;
-Console.WriteLine($"A média do aluno {nomeAluno} foi de {media}");
