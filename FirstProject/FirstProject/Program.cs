@@ -186,18 +186,36 @@
 
 
 //}
-Musica musica1 = new Musica();
-Musica musica2 = new Musica();
+//Musica musica1 = new Musica();
+//Musica musica2 = new Musica();
 
-musica1.nome = "Roxane";
-musica1.artista = "The police";
-musica1.duracao = 273;
-musica1.disponivel = true;
+//musica1.nome = "Roxane";
+//musica1.artista = "The police";
+//musica1.duracao = 273;
+//musica1.disponivel = true;
 
-musica2.nome = "Vertigo";
-musica2.artista = "U2";
-musica2.duracao = 367;
-musica2.disponivel = false;
+//musica2.nome = "Vertigo";
+//musica2.artista = "U2";
+//musica2.duracao = 367;
+//musica2.disponivel = false;
 
-musica1.ExibeFicha();
-musica2.ExibeFicha();
+//musica1.ExibeFicha();
+//musica2.ExibeFicha();
+
+Carro car1 = new Carro();
+
+car1.velocidade = 0;
+
+car1.acelerar();
+car1.acelerar();
+car1.acelerar();
+car1.acelerar();
+
+Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
+
+car1.frear();
+car1.frear();
+
+Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
+
+car1.buzinar();
