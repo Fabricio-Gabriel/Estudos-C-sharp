@@ -1,50 +1,29 @@
-﻿//class Musica
-//{
-//    public string nome;
-//    public string artista;
-//    public int duracao;
-//    public bool disponivel;
-
-//    public void ExibeFicha()
-//    {
-//        Console.WriteLine($"Nome da música: {this.nome}");
-//        Console.WriteLine($"Nome do artista: {this.artista}");
-//        Console.WriteLine($"Duração: {this.duracao}");
-
-//        if (disponivel) 
-//        {
-//            Console.WriteLine("A música está disponivel no plano\n");
-//        } else
-//        {
-//            Console.WriteLine("Adquira o plano premium \n");
-//        }
-//    } 
-//}
-
-public class Carro
+﻿class Musica
 {
-    public int velocidade;
-    public string cor;
-    public int ano;
-    public string modelo;
+    public string nome;
+    public string artista;
+    public int duracao;
+    public bool disponivel;
 
-    public void acelerar() 
+    public void ExibeFicha()
     {
-        this.velocidade+=10;
-    } 
+        Console.WriteLine($"Nome da música: {this.nome}");
+        Console.WriteLine($"Nome do artista: {this.artista}");
+        Console.WriteLine($"Duração: {this.duracao}");
 
-    public void frear()
-    {
-        this.velocidade-=10;
+        if (disponivel)
+        {
+            Console.WriteLine("A música está disponivel no plano\n");
+        }
+        else
+        {
+            Console.WriteLine("Adquira o plano premium \n");
+        }
     }
 
-    public void buzinar()
+    public void MostraNome()
     {
-        Console.WriteLine("BI BI BIIIIIIIII");
+        Console.WriteLine($"Nome da música: {this.nome}");
+        Console.WriteLine($"Nome do Artista: {this.artista}");
     }
-
 }
-
-
-
-

@@ -186,36 +186,37 @@
 
 
 //}
-//Musica musica1 = new Musica();
-//Musica musica2 = new Musica();
 
-//musica1.nome = "Roxane";
-//musica1.artista = "The police";
-//musica1.duracao = 273;
-//musica1.disponivel = true;
+//Carro car1 = new Carro();
 
-//musica2.nome = "Vertigo";
-//musica2.artista = "U2";
-//musica2.duracao = 367;
-//musica2.disponivel = false;
+//car1.velocidade = 0;
 
-//musica1.ExibeFicha();
-//musica2.ExibeFicha();
+//car1.acelerar();
+//car1.acelerar();
+//car1.acelerar();
+//car1.acelerar();
 
-Carro car1 = new Carro();
+//Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
 
-car1.velocidade = 0;
+//car1.frear();
+//car1.frear();
 
-car1.acelerar();
-car1.acelerar();
-car1.acelerar();
-car1.acelerar();
+//Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
 
-Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
+//car1.buzinar();
 
-car1.frear();
-car1.frear();
+Musica musica1 = new Musica();
+Musica musica2 = new Musica();
 
-Console.WriteLine($"A velocidade atual do carro é de {car1.velocidade}km/h");
+musica1.nome = "Roxane";
+musica1.artista = "The police";
+musica1.duracao = 273;
+musica1.disponivel = true;
 
-car1.buzinar();
+musica2.nome = "Vertigo";
+musica2.artista = "U2";
+musica2.duracao = 367;
+musica2.disponivel = false;
+
+musica1.ExibeFicha();
+musica2.ExibeFicha();
