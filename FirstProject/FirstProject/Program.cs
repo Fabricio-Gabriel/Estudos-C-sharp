@@ -205,6 +205,11 @@
 
 //car1.buzinar();
 
+//List<int> numeros = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//List<int> numerosPares = numeros.FindAll(numero => numero % 2 == 0);
+
+//numerosPares.ForEach(numero => Console.WriteLine(numero));
+
 Musica musica1 = new Musica();
 Musica musica2 = new Musica();
 
@@ -212,6 +217,7 @@ musica1.Nome = "Roxane";
 musica1.Artista = "The police";
 musica1.Duracao = 273;
 musica1.Disponivel = true;
+Console.WriteLine(musica1.DescricaoResumida);
 
 musica2.Nome = "Vertigo";
 musica2.Artista = "U2";
@@ -220,3 +226,12 @@ musica2.Disponivel = false;
 
 musica1.ExibeFicha();
 musica2.ExibeFicha();
+
+//Carro car1 = new Carro();
+
+//car1.Modelo = "Civic";
+//car1.Fabricante = "Honda";
+//car1.setAno(1999);
+//Console.WriteLine(car1.DescricaoDetalhada);
+
+
