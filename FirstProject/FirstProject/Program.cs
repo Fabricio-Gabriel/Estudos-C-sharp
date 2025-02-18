@@ -213,19 +213,20 @@
 Musica musica1 = new Musica();
 Musica musica2 = new Musica();
 
-musica1.nome = "Roxane";
-musica1.artista = "The police";
-musica1.duracao = 273;
-musica1.disponivel = true;
-//Console.WriteLine(musica1.DescricaoResumida);
+musica1.Nome = "Roxane";
+musica1.Artista = "The police";
+musica1.Duracao = 273;
+musica1.Disponivel = true;
+Console.WriteLine(musica1.DescricaoResumida);
 
-musica2.nome = "Vertigo";
-musica2.artista = "U2";
-musica2.duracao = 367;
-musica2.disponivel = false;
+musica2.Nome = "Vertigo";
+musica2.Artista = "U2";
+musica2.Duracao = 367;
+musica2.Disponivel = false;
+Console.WriteLine(musica2.DescricaoResumida);
 
-//musica1.exibeFicha();
-//musica2.exibeFicha();
+musica1.ExibeFichaTecnica();
+musica2.ExibeFichaTecnica();
 
 //Carro car1 = new Carro();
 
