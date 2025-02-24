@@ -210,23 +210,23 @@
 
 //numerosPares.ForEach(numero => Console.WriteLine(numero));
 
-Musica musica1 = new Musica();
-Musica musica2 = new Musica();
+//Musica musica1 = new Musica();
+//Musica musica2 = new Musica();
 
-musica1.Nome = "Roxane";
-musica1.Artista = "The police";
-musica1.Duracao = 273;
-musica1.Disponivel = true;
-Console.WriteLine(musica1.DescricaoResumida);
+//musica1.Nome = "Roxane";
+//musica1.Artista = "The police";
+//musica1.Duracao = 273;
+//musica1.Disponivel = true;
+//Console.WriteLine(musica1.DescricaoResumida);
 
-musica2.Nome = "Vertigo";
-musica2.Artista = "U2";
-musica2.Duracao = 367;
-musica2.Disponivel = false;
-Console.WriteLine(musica2.DescricaoResumida);
+//musica2.Nome = "Vertigo";
+//musica2.Artista = "U2";
+//musica2.Duracao = 367;
+//musica2.Disponivel = false;
+//Console.WriteLine(musica2.DescricaoResumida);
 
-musica1.ExibeFichaTecnica();
-musica2.ExibeFichaTecnica();
+//musica1.ExibeFichaTecnica();
+//musica2.ExibeFichaTecnica();
 
 //Carro car1 = new Carro();
 
@@ -236,3 +236,18 @@ musica2.ExibeFichaTecnica();
 //Console.WriteLine(car1.DescricaoDetalhada);
 
 
+Album albumQueen = new Album();
+albumQueen.Nome = "A night at the opera";
+
+Musica musica1 = new Musica();
+musica1.Nome = "Love of my life";
+musica1.Duracao = 213;
+
+Musica musica2 = new Musica();
+musica2.Nome = "Bohemian Rhapsody";
+musica2.Duracao = 354;
+
+albumQueen.AdicionarMusica(musica1);
+albumQueen.AdicionarMusica(musica2);
+
+albumQueen.ExibirMusicasDoAlbum();
