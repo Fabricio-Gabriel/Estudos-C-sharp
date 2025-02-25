@@ -236,23 +236,27 @@
 //Console.WriteLine(car1.DescricaoDetalhada);
 
 
-Album albumQueen = new Album();
-albumQueen.Nome = "A night at the opera";
+Album albumQueen = new Album("A night at the opera");
 
-Banda queen = new Banda();
-queen.Nome = "Queen";
+Banda queen = new Banda("Queen");
 queen.AdicionarAlbum(albumQueen);
 
-Musica musica1 = new Musica();
-musica1.Nome = "Love of my life";
-musica1.Duracao = 213;
+Musica musica1 = new Musica(queen, "Love of my life")
+{
+    Disponivel = true,
+    Duracao = 213
+};
 
-Musica musica2 = new Musica();
-musica2.Nome = "Bohemian Rhapsody";
-musica2.Duracao = 354;
+Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
+{
+    Disponivel = false,
+    Duracao = 354
+};
 
 albumQueen.AdicionarMusica(musica1);
 albumQueen.AdicionarMusica(musica2);
 
+musica1.ExibeFichaTecnica();
+musica2.ExibeFichaTecnica();
 albumQueen.ExibirMusicasDoAlbum();
 queen.ExibirDiscografia();
