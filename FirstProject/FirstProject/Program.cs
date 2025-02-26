@@ -236,27 +236,42 @@
 //Console.WriteLine(car1.DescricaoDetalhada);
 
 
-Album albumQueen = new Album("A night at the opera");
+//Album albumQueen = new Album("A night at the opera");
 
-Banda queen = new Banda("Queen");
-queen.AdicionarAlbum(albumQueen);
+//Banda queen = new Banda("Queen");
+//queen.AdicionarAlbum(albumQueen);
 
-Musica musica1 = new Musica(queen, "Love of my life")
-{
-    Disponivel = true,
-    Duracao = 213
-};
+//Musica musica1 = new Musica(queen, "Love of my life")
+//{
+//    Disponivel = true,
+//    Duracao = 213
+//};
 
-Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
-{
-    Disponivel = false,
-    Duracao = 354
-};
+//Musica musica2 = new Musica(queen, "Bohemian Rhapsody")
+//{
+//    Disponivel = false,
+//    Duracao = 354
+//};
 
-albumQueen.AdicionarMusica(musica1);
-albumQueen.AdicionarMusica(musica2);
+//albumQueen.AdicionarMusica(musica1);
+//albumQueen.AdicionarMusica(musica2);
 
-musica1.ExibeFichaTecnica();
-musica2.ExibeFichaTecnica();
-albumQueen.ExibirMusicasDoAlbum();
-queen.ExibirDiscografia();
+//musica1.ExibeFichaTecnica();
+//musica2.ExibeFichaTecnica();
+//albumQueen.ExibirMusicasDoAlbum();
+//queen.ExibirDiscografia();
+
+Convidado paulGeorge = new Convidado("Paul George", 34, "Jogador de basquete");
+Convidado julioCocielo = new Convidado("Júlio Cocielo", 32, "YouTuber");
+Convidado GuiSantos = new Convidado("Gui Santos", 26, "Jogador de Basquete");
+
+Episodio episodio1 = new Episodio(3600, "Conhecendo Paul George");
+Episodio episodio2 = new Episodio(3600, "Conversa com Cocielo");
+Episodio episodio3 = new Episodio(3600, "Falando com Gui Santos");
+
+Podcast podPah = new Podcast("Youtube", "PodPah");
+podPah.AdicionarEpisodio(episodio1);
+podPah.AdicionarEpisodio(episodio2);
+podPah.AdicionarEpisodio(episodio3);
+
+podPah.ExibirDetalhes();

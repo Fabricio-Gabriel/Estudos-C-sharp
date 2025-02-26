@@ -28,15 +28,4 @@
             Console.WriteLine("Adquira o plano Plus+\n");
         }
     }
-
-    //public void setDisponivel(bool value)
-    //{
-    //    this.disponivel = value;
-    //}
-
-    //public bool getDisponivel()
-    //{
-    //    return this.disponivel;
-    //}
-
 }
