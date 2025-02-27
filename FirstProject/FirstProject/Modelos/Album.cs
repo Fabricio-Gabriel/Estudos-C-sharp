@@ -1,4 +1,6 @@
-﻿class Album
+﻿namespace FirstProject.Modelos;
+
+class Album
 {
     private List<Musica> musicas = [];
     public string Nome { get; }

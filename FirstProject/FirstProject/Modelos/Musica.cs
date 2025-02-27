@@ -1,4 +1,6 @@
-﻿class Musica
+﻿namespace FirstProject.Modelos;
+
+class Musica
 {
     public string Nome { get; }
     public Banda Artista { get; }

@@ -1,4 +1,6 @@
-﻿class Banda
+﻿namespace FirstProject.Modelos;
+
+class Banda
 {
     private List<Album> albums = [];
     public string Nome { get; }
