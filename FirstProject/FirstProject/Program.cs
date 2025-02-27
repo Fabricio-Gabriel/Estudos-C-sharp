@@ -264,14 +264,17 @@
 Convidado paulGeorge = new Convidado("Paul George", 34, "Jogador de basquete");
 Convidado julioCocielo = new Convidado("Júlio Cocielo", 32, "YouTuber");
 Convidado GuiSantos = new Convidado("Gui Santos", 26, "Jogador de Basquete");
+Convidado fabricioGabriel = new Convidado("Fabricio Gabriel", 20, "Dev");
 
-Episodio episodio1 = new Episodio(3600, "Conhecendo Paul George");
-Episodio episodio2 = new Episodio(3600, "Conversa com Cocielo");
-Episodio episodio3 = new Episodio(3600, "Falando com Gui Santos");
+Episodio episodio1 = new Episodio(3600, $"Conhecendo {paulGeorge.Nome}");
+Episodio episodio2 = new Episodio(3600, $"Conversa com {julioCocielo.Nome}");
+Episodio episodio3 = new Episodio(3600, $"Falando com {GuiSantos.Nome}");
+Episodio episodio4 = new Episodio(7200, $"Conversando com {fabricioGabriel.Nome}");
 
 Podcast podPah = new Podcast("Youtube", "PodPah");
 podPah.AdicionarEpisodio(episodio1);
 podPah.AdicionarEpisodio(episodio2);
 podPah.AdicionarEpisodio(episodio3);
+podPah.AdicionarEpisodio(episodio4);
 
 podPah.ExibirDetalhes();
