@@ -1,6 +1,6 @@
 ﻿namespace FirstProject.Modelos;
 
-class Album
+internal class Album
 {
     private List<Musica> musicas = [];
     public string Nome { get; }

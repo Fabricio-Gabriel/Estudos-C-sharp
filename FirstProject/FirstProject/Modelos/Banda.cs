@@ -1,6 +1,6 @@
 ﻿namespace FirstProject.Modelos;
 
-class Banda
+internal class Banda
 {
     private List<Album> albums = [];
 
