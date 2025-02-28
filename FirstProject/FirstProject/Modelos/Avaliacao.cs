@@ -9,4 +9,9 @@ internal class Avaliacao
         this.Nota = nota;
     }
 
+    public static Avaliacao Parse(string text)
+    {
+        int nota = int.Parse(text);
+        return new Avaliacao(nota);
+    }
 }

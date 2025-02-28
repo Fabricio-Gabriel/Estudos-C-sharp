@@ -4,9 +4,15 @@ internal class Banda
 {
     private List<Album> albums = [];
 
-    private List<int> notas = [];
+    private List<Avaliacao> notas = [];
 
-    public double Media => notas.Average();
+    public double Media { 
+        get
+        {
+            if (notas.Count == 0) return 0;
+            else return notas.Average(avaliacao => avaliacao.Nota);
+        }
+    }
     public string Nome { get; }
 
     public Banda(string nome)
@@ -19,7 +25,7 @@ internal class Banda
         albums.Add(album);
     }
 
-    public void AdicionarNota(int nota)
+    public void AdicionarNota(Avaliacao nota)
     {
         notas.Add(nota);
     }
