@@ -6,7 +6,17 @@ internal class Avaliacao
 
     public Avaliacao(int nota)
     {
-        this.Nota = nota;
+        if (nota < 0)
+        {
+            this.Nota = 0;
+        }
+        else if (nota > 10)
+        {
+            this.Nota = 10;
+        } else
+        {
+            this.Nota = nota;
+        }
     }
 
     public static Avaliacao Parse(string text)

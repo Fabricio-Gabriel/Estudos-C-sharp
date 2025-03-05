@@ -6,9 +6,12 @@ internal class Album
     public string Nome { get; }
     public int DuracaoTotal => musicas.Sum(musica => musica.Duracao);
 
+    public static int ContadorDeObjetos = 0;
+
     public Album(string nome)
     {
         this.Nome = nome;
+        ContadorDeObjetos++;
     }
 
     public void AdicionarMusica(Musica musica)
@@ -22,4 +25,5 @@ internal class Album
         musicas.ForEach(musica => Console.WriteLine($"Música: {musica.Nome}"));
         Console.WriteLine($"Este álbum possui {this.DuracaoTotal} segundos de duração.\n");
     }
+
 }
