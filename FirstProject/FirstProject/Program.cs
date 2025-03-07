@@ -72,21 +72,6 @@ void MostraMedia()
 
 }
 
-void RegistrarBandas()
-{
-    Console.Clear();
-    ExibirTituloDaOpcao("Registro de Bandas");
-    Console.Write("Digite o nome da banda que deseja registar: ");
-    string nomeBanda = Console.ReadLine()!;
-    Banda banda = new Banda(nomeBanda);
-    bandasRegistradas.Add(nomeBanda, banda);
-    Console.WriteLine($"A banda {nomeBanda} foi registrada!");
-    Thread.Sleep(2000);
-    Console.Clear();
-    ExibeLogo();
-    ExibeMenu();
-}
-
 void ExibeMenu()
 {
     Console.WriteLine("Digite 1 registrar uma banda");
@@ -102,16 +87,22 @@ void ExibeMenu()
     switch (opcao)
     {
         case 1:
-            RegistrarBandas();
+            MenuRegistrarBanda menuRegistrarBanda = new MenuRegistrarBanda();
+            menuRegistrarBanda.ExibirTituloDaOpcao("Registre uma banda");
+            menuRegistrarBanda.Executar(bandasRegistradas);
+            ExibeLogo();
+            ExibeMenu();
             break;
         case 2:
             MenuRegistrarAlbum menuRegistraAlbum = new MenuRegistrarAlbum();
+            menuRegistraAlbum.ExibirTituloDaOpcao("Selecione um albúm a ser registrado");
             menuRegistraAlbum.Executar(bandasRegistradas);
             ExibeLogo();
             ExibeMenu();
             break;
         case 3:
             MenuMostraBandas menuMostraBanda = new MenuMostraBandas();
+            menuMostraBanda.ExibirTituloDaOpcao("Escreva uma banda para ser mostrada");
             menuMostraBanda.Executar(bandasRegistradas, listaDasBandas);
             ExibeLogo();
             ExibeMenu();
