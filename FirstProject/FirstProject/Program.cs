@@ -12,6 +12,14 @@ Dictionary<string, Banda> bandasRegistradas = new();
 bandasRegistradas.Add(ira.Nome, ira);
 bandasRegistradas.Add(beatles.Nome, beatles);
 
+Dictionary<int, Menu> opcoes = new Dictionary<int, Menu>();
+opcoes.Add(1, new MenuRegistrarBanda());
+opcoes.Add(2, new MenuRegistrarAlbum());
+opcoes.Add(3, new MenuMostraBandas());
+opcoes.Add(4, new MenuAvaliarBanda());
+opcoes.Add(5, new MenuExibirDetalhes());
+opcoes.Add(-1, new MenuSair());
+
 
 string msgBoasVindas = "Boas vindas ao Screen Sound";
 List<string> listaDasBandas = new List<string> { "U2", "The Beatles", "Calypso" };
@@ -82,52 +90,23 @@ void ExibeMenu()
     Console.WriteLine("Digite -1 para sair");
 
     Console.Write("\nDigite a sua opção: ");
-    int opcao = int.Parse(Console.ReadLine()!);
+    int opcaoEscolha = int.Parse(Console.ReadLine()!);
 
-    switch (opcao)
+    if (opcoes.ContainsKey(opcaoEscolha))
     {
-        case 1:
-            MenuRegistrarBanda menuRegistrarBanda = new MenuRegistrarBanda();
-            menuRegistrarBanda.ExibirTituloDaOpcao("Registre uma banda");
-            menuRegistrarBanda.Executar(bandasRegistradas);
+        Menu menuASerExibido = opcoes[opcaoEscolha];
+        menuASerExibido.Executar(bandasRegistradas);
+        if(opcaoEscolha > 0)
+        {
             ExibeLogo();
             ExibeMenu();
-            break;
-        case 2:
-            MenuRegistrarAlbum menuRegistraAlbum = new MenuRegistrarAlbum();
-            menuRegistraAlbum.ExibirTituloDaOpcao("Selecione um albúm a ser registrado");
-            menuRegistraAlbum.Executar(bandasRegistradas);
-            ExibeLogo();
-            ExibeMenu();
-            break;
-        case 3:
-            MenuMostraBandas menuMostraBanda = new MenuMostraBandas();
-            menuMostraBanda.ExibirTituloDaOpcao("Escreva uma banda para ser mostrada");
-            menuMostraBanda.Executar(bandasRegistradas, listaDasBandas);
-            ExibeLogo();
-            ExibeMenu();
-            break;
-        case 4:
-            MenuAvaliarBanda menuAvaliaBanda = new MenuAvaliarBanda();
-            menuAvaliaBanda.ExibirTituloDaOpcao("Avalie uma banda");
-            menuAvaliaBanda.Executar(bandasRegistradas);
-            ExibeLogo();
-            ExibeMenu();
-            break;
-        case 5:
-            MenuExibirDetalhes menu = new MenuExibirDetalhes();
-            menu.ExibirTituloDaOpcao("Detalhes da banda escolhida");
-            menu.Executar(bandasRegistradas);
-            ExibeLogo();
-            ExibeMenu();
-            break;
-        case -1:
-            Console.WriteLine("Tchau Tchau ;)");
-            break;
-        default:
-            Console.WriteLine("Opção inválida");
-            break;
+        }
+
+    } else
+    {
+        Console.WriteLine("Opção Inválida.");
     }
+    
 }
 
 ExibeLogo();

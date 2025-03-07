@@ -6,9 +6,9 @@ namespace FirstProject.Menus;
 internal class MenuAvaliarBanda : Menu
 {
 
-    public void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
-        Console.Clear();
+        base.Executar(bandasRegistradas);
         ExibirTituloDaOpcao("Avaliar banda");
         Console.Write("Digite a banda que quer avaliar: ");
         string nomeBanda = Console.ReadLine()!;
